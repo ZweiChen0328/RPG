@@ -1,0 +1,69 @@
+package achievementFX;
+
+import database.Connect;
+import javafx.event.Event;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
+import javafx.scene.text.Font;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+
+public class AchievementController implements Initializable {
+    @FXML
+    AnchorPane ap;
+    @FXML
+    ListView<String> listview;
+    @FXML
+    Button btn;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        ap.setBackground(new Background(new BackgroundImage(new Image("resource/img/開場背景.png"), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(720, 374, false, false, false, true))));
+        listview.setStyle("-fx-background-color: #00000000; -fx-text-fill: #00000000; -fx-control-inner-background: #00000000; -fx-font-size: 70px; -fx-alignment: top-center;");
+        Connect con = new Connect();
+        try {
+            listview.setItems(con.getAllAchievement());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @FXML
+    private void moveInButtonAction(Event e) {
+        Object source = e.getSource();
+        Button btn = (Button) source;
+        btn.setStyle("-fx-background-color: transparent; -fx-text-fill: green");
+        btn.setFont(new Font(90));
+    }
+
+    @FXML
+    private void moveOutButtonAction(Event e) {
+        Object source = e.getSource();
+        Button btn = (Button) source;
+        btn.setFont(new Font(70));
+        btn.setStyle("-fx-background-color: transparent; -fx-text-fill: black;");
+    }
+
+    @FXML
+    private void clickReturnButtonAction(Event e) throws IOException {
+        Stage currentStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        Parent root1 = FXMLLoader.load(getClass().getClassLoader().getResource("StartFX/start.fxml"));
+        currentStage.setScene(new Scene(root1, currentStage.getWidth(), currentStage.getHeight()));
+        currentStage.setTitle("Game");
+    }
+}
+

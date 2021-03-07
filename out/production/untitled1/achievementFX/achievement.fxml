@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="ap" prefHeight="550.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="achievementFX.AchievementController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="255.0" layoutY="71.0" prefHeight="200.0" prefWidth="196.0" spacing="30.0" style="-fx-background-color: #00000000;" AnchorPane.bottomAnchor="116.0" AnchorPane.leftAnchor="255.0" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="71.0">
+         <children>
+            <ListView fx:id="listview" maxHeight="300.0" maxWidth="600.0" minHeight="300.0" minWidth="600.0" prefHeight="300.0" prefWidth="600.0" scaleShape="false" style="-fx-border-color: transparent;" stylesheets="@../resource/css/listview.css">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></ListView>
+            <Button fx:id="btn" mnemonicParsing="false" onMouseClicked="#clickReturnButtonAction" onMouseEntered="#moveInButtonAction" onMouseExited="#moveOutButtonAction" style="-fx-background-color: transparent;" text="返回">
+               <font>
+                  <Font size="70.0" />
+               </font></Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

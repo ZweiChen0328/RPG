@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="ap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StartFX.StartController">
+   <children>
+      <VBox alignment="TOP_RIGHT" layoutX="255.0" layoutY="71.0" prefHeight="200.0" prefWidth="196.0" spacing="5.0" AnchorPane.bottomAnchor="116.0" AnchorPane.leftAnchor="255.0" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="71.0">
+         <children>
+            <Button fx:id="gameStart" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" mnemonicParsing="false" onMouseClicked="#clickGameStartButtonAction" onMouseEntered="#moveInButtonAction" onMouseExited="#moveOutButtonAction" style="-fx-background-color: transparent;" text="遊戲開始" textAlignment="CENTER">
+               <font>
+                  <Font size="70.0" />
+               </font>
+            </Button>
+            <Button fx:id="achievement" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#clickAchievementButtonAction" onMouseEntered="#moveInButtonAction" onMouseExited="#moveOutButtonAction" style="-fx-background-color: transparent;" text="成就" textAlignment="CENTER">
+               <font>
+                  <Font size="70.0" />
+               </font>
+               <VBox.margin>
+                  <Insets right="40.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="producer" alignment="CENTER" mnemonicParsing="false" onAction="#clickProducerButtonAction" onMouseEntered="#moveInButtonAction" onMouseExited="#moveOutButtonAction" style="-fx-background-color: transparent;" text="製作人員" textAlignment="CENTER">
+               <font>
+                  <Font size="70.0" />
+               </font></Button>
+            <Button fx:id="exit" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#clickExitButtonAction" onMouseEntered="#moveInButtonAction" onMouseExited="#moveOutButtonAction" style="-fx-background-color: transparent;" text="離開" textAlignment="CENTER">
+               <font>
+                  <Font size="70.0" />
+               </font>
+               <VBox.margin>
+                  <Insets right="40.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets top="40.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameFX.Controller">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="25.0" layoutY="53.0" prefHeight="239.0" prefWidth="190.0" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="40.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="attack" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                  <ImageView fx:id="attack2" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                  <ImageView fx:id="defense" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <Label fx:id="solidernamelable" alignment="CENTER" style="-fx-border-width: 2;" text="Yusha" textFill="#529bff" underline="true">
+               <font>
+                  <Font name="Liberation Mono" size="62.0" />
+               </font>
+            </Label>
+            <Label fx:id="soliderfa" textFill="#f50707">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="soliderhp1" textFill="WHITE">
+               <font>
+                  <Font size="31.0" />
+               </font></Label>
+            <ProgressBar fx:id="progressBar" prefWidth="200.0" progress="0.0" />
+            <ImageView fx:id="Yusha" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </VBox>
+      <HBox fx:id="THEHBOX" alignment="TOP_RIGHT" prefHeight="234.0" prefWidth="606.0" style="-fx-border-color: white; -fx-border-width: 2; -fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="Script" lineSpacing="3.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-text-alignment: left;" text="文字顯示" textFill="#f8f246" underline="true">
+                     <font>
+                        <Font size="51.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="introduce" lineSpacing="1.0" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="45.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="skillround2" lineSpacing="1.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="154.0" prefWidth="84.0" spacing="5.0">
+               <children>
+                  <Button fx:id="uses" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#usesButton" style="-fx-background-color: black; -fx-border-color: white;" text="使用" textFill="#f2f2f2" visible="false">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="cancel" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#cancelButton" style="-fx-background-color: black; -fx-border-color: white;" text="取消" textFill="WHITE" visible="false">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="5.0" right="5.0" />
+               </padding>
+            </HBox>
+            <HBox>
+               <children>
+                  <ListView fx:id="listView" disable="true" onMouseClicked="#listClick" prefWidth="200.0" style="-fx-background-color: black;" visible="false" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets></ListView>
+               </children>
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: black; -fx-border-width: 2;">
+               <children>
+                  <HBox>
+                     <children>
+                        <Button fx:id="atk" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#atkButton" onMouseEntered="#moveInButtonAction" onMouseExited="#moveOutButtonAction" prefHeight="112.0" prefWidth="150.0" style="-fx-border-color: orange;" text="攻擊" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                           <effect>
+                              <Reflection />
+                           </effect></Button>
+                        <Button fx:id="skill" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#skillButton" onMouseEntered="#moveInButtonAction" onMouseExited="#moveOutButtonAction" prefHeight="112.0" prefWidth="150.0" style="-fx-border-color: orange;" text="技能" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="40.0" />
+                           </font></Button>
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Button fx:id="item" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#itemButton" onMouseEntered="#moveInButtonAction" onMouseExited="#moveOutButtonAction" prefHeight="112.0" prefWidth="150.0" style="-fx-border-color: orange;" text="物品" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="40.0" />
+                           </font></Button>
+                        <Button fx:id="coward" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#cowardButton" onMouseEntered="#moveInButtonAction" onMouseExited="#moveOutButtonAction" prefHeight="112.0" prefWidth="150.0" style="-fx-border-color: orange;" text="撤退" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="40.0" />
+                           </font></Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="2.0" top="1.0" />
+         </padding>
+      </HBox>
+      <VBox alignment="TOP_CENTER" prefHeight="315.0" prefWidth="200.0" AnchorPane.bottomAnchor="300.0" AnchorPane.rightAnchor="40.0">
+         <children>
+            <ImageView fx:id="property" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="abc" style="-fx-border-width: 2;" text="Mao" textFill="#b92222" underline="true">
+               <font>
+                  <Font name="Alef Regular" size="62.0" />
+               </font></Label>
+            <Label fx:id="bossfa" textFill="#f50707">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="bosshp1" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font></Label>
+            <ProgressBar fx:id="progressBar2" prefWidth="200.0" progress="0.0" />
+            <ImageView fx:id="Mao" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" layoutX="200.0" layoutY="363.0" AnchorPane.bottomAnchor="235.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
+         <children>
+            <ImageView fx:id="anime" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="attackmessage" textFill="#e83b3b">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <ListView fx:id="achShowList" mouseTransparent="true" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: black; -fx-border-color: white;" visible="false" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+   </children>
+   <effect>
+      <ColorAdjust />
+   </effect>
+</AnchorPane>

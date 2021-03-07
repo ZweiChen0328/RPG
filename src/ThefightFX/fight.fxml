@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ThefightFX.Controller">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="25.0" layoutY="53.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="50.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="attack" fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                  <ImageView fx:id="attack2" fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                  <ImageView fx:id="defense" fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <Label fx:id="solidernamelable" alignment="CENTER" text="Yusha" textFill="#7f4be8" underline="true">
+               <font>
+                  <Font name="Liberation Mono" size="55.0" />
+               </font></Label>
+            <Label fx:id="soliderfa" textFill="#f50707">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="soliderhp1" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <ImageView fx:id="Yusha" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/img/勇者閉眼.gif" />
+               </image></ImageView>
+         </children>
+      </VBox>
+      <HBox fx:id="hBox" alignment="TOP_RIGHT" prefWidth="200.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="Script" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-text-alignment: left;" textFill="#d4e46b" underline="true">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="introduce" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="skillround2" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="115.0" prefWidth="110.0" spacing="5.0">
+               <children>
+                  <Button fx:id="uses" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="50.0" text="使用" visible="false">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="cancel" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="50.0" text="取消" visible="false">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="5.0" right="5.0" />
+               </padding>
+            </HBox>
+            <ListView fx:id="listView" disable="true" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: black;" visible="false" />
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <HBox />
+                  <HBox />
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="2.0" top="1.0" />
+         </padding>
+      </HBox>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="250.0" AnchorPane.rightAnchor="50.0">
+         <children>
+            <ImageView fx:id="property" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="bossname" text="Mao" textFill="#ff650c" underline="true">
+               <font>
+                  <Font name="Alef Regular" size="55.0" />
+               </font></Label>
+            <Label fx:id="bossfa" textFill="#f50707">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="bosshp1" textFill="WHITE" underline="true">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <ImageView fx:id="Mao" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/img/mao.gif" />
+               </image></ImageView>
+         </children>
+      </VBox>
+      <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="200.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="15.0">
+         <children>
+            <Label fx:id="TrophyText" alignment="TOP_LEFT" style="-fx-text-fill: white;">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <ImageView fx:id="Trophy" fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </HBox>
+      <VBox alignment="TOP_CENTER" layoutX="200.0" layoutY="202.0" AnchorPane.bottomAnchor="202.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
+         <children>
+            <ImageView fx:id="anime" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="attackmessage" textFill="#e83b3b">
+               <font>
+                  <Font size="60.0" />
+               </font>
+            </Label>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="N" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#nameButton" text="我是誰?我在哪?" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" visible="false" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="Y" alignment="BASELINE_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#nameButton" text="發生了什麼是??" visible="false" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
